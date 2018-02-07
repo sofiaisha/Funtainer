@@ -1,0 +1,20 @@
+box: node
+build:
+  steps:
+    - script:
+        name: echo nodejs information
+        code: |
+          echo "node version $(node -v) running"
+          echo "npm version $(npm -v) running"
+push-release:
+  box:
+    id: node:8-alpine
+  steps:
+    - internal/docker-push:
+        disable-sync: true
+        repository: thebeebs/funtainer:0.0.2
+        username: $DOCKER_USERNAME
+        password: $DOCKER_PASSWORD
+        registry: https://registry.hub.docker.com/v2
+        tag: $WERCKER_GIT_COMMIT
+        cmd: node ./func.js
