@@ -19,8 +19,8 @@ push-release:
         name: super hack
         code: |
             echo "2222" > $WERCKER_OUTPUT_DIR/myfile.txt
-            $(value=$(<"$WERCKER_OUTPUT_DIR/myfile.txt") | value )
-            echo $(echo "$WERCKER_OUTPUT_DIR/myfile.txt") 
+            value=$(<"$WERCKER_OUTPUT_DIR/myfile.txt")
+            echo $value 
     - script:
         code: |
           env
