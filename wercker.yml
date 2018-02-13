@@ -8,8 +8,9 @@ build:
           echo "npm version $(npm -v) running"
     - script:
         name: update var here
-        code: | 
-            echo $(cat "$file") 
+        code: |
+            echo "123213" > myfile.txt
+            echo $(cat "myfile.txt") 
 push-release:
   box:
     id: node:8-alpine
