@@ -9,8 +9,8 @@ build:
     - script:
         name: update var here
         code: |
-            echo "2222" > $WERCKER_OUTPUT_DIR\myfile.txt
-            echo $(cat "$WERCKER_OUTPUT_DIR\myfile.txt") 
+            echo "2222" > $WERCKER_OUTPUT_DIR/myfile.txt
+            echo $(cat "$WERCKER_OUTPUT_DIR/myfile.txt") 
 push-release:
   box:
     id: node:8-alpine
