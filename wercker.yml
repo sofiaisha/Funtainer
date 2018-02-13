@@ -20,6 +20,7 @@ push-release:
         code: |
             $($STR && FUNC_VERSION="jeff") 
             $(FUNC_VERSION="jeff" && $STR ) 
+            echo "Pushing: ${FUNC_VERSION}"
     - script:
         code: |
           env
