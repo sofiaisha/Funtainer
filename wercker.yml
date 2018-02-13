@@ -21,7 +21,7 @@ push-release:
     - internal/docker-push:
         disable-sync: false
         repository: thebeebs/funtainer:0.0.2
-        username: $(set $FUNC_VERSION="2.0.0" && $DOCKER_USERNAME ) 
+        username: $DOCKER_USERNAME
         password: $DOCKER_PASSWORD
         registry: https://registry.hub.docker.com/v2
         tag: $FUNC_VERSION
