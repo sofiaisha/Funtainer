@@ -9,7 +9,7 @@ build:
     - script:
         name: update var here
         code: | 
-            set $FUNC_VERSION=1.0.3
+            echo ${date// /.}
 push-release:
   box:
     id: node:8-alpine
