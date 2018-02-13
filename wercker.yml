@@ -16,16 +16,12 @@ push-release:
             set $FUNC_VERSION=1.0.3
             echo "Pushing: ${FUNC_VERSION}"
     - script:
-        name: super hack
-        code: |
-            $(set $FUNC_VERSION="2.0.0" && echo $FUNC_VERSION ) 
-    - script:
         code: |
           env
     - internal/docker-push:
         disable-sync: false
         repository: thebeebs/funtainer:0.0.2
-        username: $($DOCKER_USERNAME | $FUNC_VERSION=jeff) 
+        username: $(set $FUNC_VERSION="2.0.0" && $DOCKER_USERNAME ) 
         password: $DOCKER_PASSWORD
         registry: https://registry.hub.docker.com/v2
         tag: $FUNC_VERSION
