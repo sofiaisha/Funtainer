@@ -9,7 +9,7 @@ build:
     - script:
         name: update var here
         code: | 
-            echo ${date// /.}
+            echo ${ 2+ 4}
 push-release:
   box:
     id: node:8-alpine
