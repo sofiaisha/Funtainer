@@ -18,7 +18,7 @@ push-release:
     - script:
         name: super hack
         code: |
-            $(beebs="jeff" && echo "$beebs" ) 
+            $(set $FUNC_VERSION="2.0.0" && echo $FUNC_VERSION ) 
     - script:
         code: |
           env
