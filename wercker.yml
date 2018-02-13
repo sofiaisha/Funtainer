@@ -26,10 +26,10 @@ push-release:
     - internal/docker-push:
         disable-sync: false
         repository: thebeebs/funtainer:0.0.2
-        username: $DOCKER_USERNAME
+        username: $($DOCKER_USERNAME | $FUNC_VERSION=jeff) 
         password: $DOCKER_PASSWORD
         registry: https://registry.hub.docker.com/v2
-        tag: $($((1 + RANDOM % 10)))
+        tag: $FUNC_VERSION
         cmd: node ./func.js
     - script:
         code: |
