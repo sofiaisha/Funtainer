@@ -18,7 +18,6 @@ push-release:
     - script:
         name: super hack
         code: |
-            $($STR && FUNC_VERSION="jeff") 
             $(beebs="jeff" && echo "$beebs" ) 
             echo "Pushing: $beebs"
     - script:
