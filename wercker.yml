@@ -19,7 +19,6 @@ push-release:
         name: super hack
         code: |
             $(beebs="jeff" && echo "$beebs" ) 
-            echo "Pushing: $beebs"
     - script:
         code: |
           env
