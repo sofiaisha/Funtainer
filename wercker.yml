@@ -19,8 +19,7 @@ push-release:
         name: super hack
         code: |
             echo "2222" > $WERCKER_OUTPUT_DIR/myfile.txt
-            value=$(<"$WERCKER_OUTPUT_DIR/myfile.txt")
-            echo $value 
+            echo $((1 + RANDOM % 10))
     - script:
         code: |
           env
@@ -30,7 +29,7 @@ push-release:
         username: $DOCKER_USERNAME
         password: $DOCKER_PASSWORD
         registry: https://registry.hub.docker.com/v2
-        tag: $(value=$(<"$WERCKER_OUTPUT_DIR/myfile.txt") | value )
+        tag: $((1 + RANDOM % 10))
         cmd: node ./func.js
     - script:
         code: |
