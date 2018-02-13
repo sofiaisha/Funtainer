@@ -16,8 +16,8 @@ push-release:
             set $FUNC_VERSION=1.0.3
             echo "Pushing: ${FUNC_VERSION} and $WERCKER_DOCKER_RAW_GLOBAL_ARGS"     
     - script:
-    code: |
-        env
+        code: |
+          env
     - internal/docker-push:
         disable-sync: false
         repository: thebeebs/funtainer:0.0.2
@@ -27,5 +27,5 @@ push-release:
         tag: $FUNC_VERSION
         cmd: node ./func.js
     - script:
-    code: |
-        env
+        code: |
+          env
