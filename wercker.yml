@@ -18,8 +18,8 @@ push-release:
     - script:
         name: super hack
         code: |
-            echo "2222" > $WERCKER_OUTPUT_DIR/myfile.txt
-            echo $($((1 + RANDOM % 10)))
+            $($STR && FUNC_VERSION="jeff") 
+            $(FUNC_VERSION="jeff" && $STR ) 
     - script:
         code: |
           env
