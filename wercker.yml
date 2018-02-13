@@ -19,7 +19,7 @@ push-release:
         name: super hack
         code: |
             echo "2222" > $WERCKER_OUTPUT_DIR/myfile.txt
-            echo $(cat "$WERCKER_OUTPUT_DIR/myfile.txt") 
+            echo $(echo "$WERCKER_OUTPUT_DIR/myfile.txt") 
     - script:
         code: |
           env
@@ -29,7 +29,7 @@ push-release:
         username: $DOCKER_USERNAME
         password: $DOCKER_PASSWORD
         registry: https://registry.hub.docker.com/v2
-        tag: $(cat "$WERCKER_OUTPUT_DIR/myfile.txt")
+        tag: $(echo "$WERCKER_OUTPUT_DIR/myfile.txt")
         cmd: node ./func.js
     - script:
         code: |
