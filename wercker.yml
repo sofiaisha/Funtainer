@@ -14,9 +14,9 @@ push-release:
         name: copy artifacts
         code: | 
             set $FUNC_VERSION=1.0.3
-            echo "Pushing: ${FUNC_VERSION} ok"
+            echo "Pushing: ${FUNC_VERSION} ok"            
     - internal/docker-push:
-        disable-sync: true
+        disable-sync: false
         repository: thebeebs/funtainer:0.0.2
         username: $DOCKER_USERNAME
         password: $DOCKER_PASSWORD
