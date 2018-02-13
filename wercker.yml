@@ -6,11 +6,6 @@ build:
         code: |
           echo "node version $(node -v) running"
           echo "npm version $(npm -v) running"
-    - script:
-        name: update var here
-        code: |
-            echo "2222" > $WERCKER_OUTPUT_DIR/myfile.txt
-            echo $(cat "$WERCKER_OUTPUT_DIR/myfile.txt") 
 push-release:
   box:
     id: node:8-alpine
@@ -19,7 +14,12 @@ push-release:
         name: copy artifacts
         code: | 
             set $FUNC_VERSION=1.0.3
-            echo "Pushing: ${FUNC_VERSION}"     
+            echo "Pushing: ${FUNC_VERSION}"
+    - script:
+        name: super hack
+        code: |
+            echo "2222" > $WERCKER_OUTPUT_DIR/myfile.txt
+            echo $(cat "$WERCKER_OUTPUT_DIR/myfile.txt") 
     - script:
         code: |
           env
@@ -29,7 +29,7 @@ push-release:
         username: $DOCKER_USERNAME
         password: $DOCKER_PASSWORD
         registry: https://registry.hub.docker.com/v2
-        tag: $(date +%Y%m%d)
+        tag: $(cat "$WERCKER_OUTPUT_DIR/myfile.txt")
         cmd: node ./func.js
     - script:
         code: |
